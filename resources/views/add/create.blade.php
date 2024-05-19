@@ -16,7 +16,7 @@
       </div>
 
     @if(session()->has('success'))
-        
+
     <div role="alert" class="alert alert-success">
         <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         <span>
@@ -25,19 +25,19 @@
       </div>
 
     @endif
-    
-    
+
+
     <div class="mt-32">
-        
+
         <div class="flex justify-center">
-            <form action="/create" method="POST" >
+            <form action="/create" method="POST" enctype="multipart/form-data">
             @csrf
-            
+
               <label class="input input-bordered flex items-center gap-2">
                 Harga
                 <input type="text" class="grow" name="harga" id="harga" />
               </label>
-              
+
               <input type="file" name="gambar" id="gambar" class="file-input file-input-bordered w-full max-w-xs" />
 
               <textarea class="textarea textarea-bordered" placeholder="Deskripsi" name="deskripsi" id="deskripsi"></textarea>
@@ -45,11 +45,11 @@
               <div class="flex justify-center mt-4">
                 <button class="btn btn-info">Create</button>
               </div>
- 
+
         </div>
-        
+
         </div>
     </div>
-    
+
 </body>
 </html>

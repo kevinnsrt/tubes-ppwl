@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            
+
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('postingans');
+        Schema::dropIfExists('postingan');
     }
 };

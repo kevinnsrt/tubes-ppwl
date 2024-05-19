@@ -22,6 +22,6 @@ class RegisterController extends Controller
 
         // $request->session()->flash('success','Registrasi Berhasil! Silahkan Login');
 
-        return redirect('/login')->with('success','Registrasi Berhasil! Silahkan Login');
+        return redirect('login')->with('success','Registrasi Berhasil! Silahkan Login');
     }
 }

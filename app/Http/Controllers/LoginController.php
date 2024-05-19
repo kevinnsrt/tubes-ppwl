@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use  Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -25,15 +26,19 @@ class LoginController extends Controller
 
         return back()->with('loginError','Login Gagal');
 
-        dd('berhasil login');
+
 
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request): RedirectResponse
+    {
         Auth::logout();
+
         $request->session()->invalidate();
+
         $request->session()->regenerateToken();
-        return redirect('/users');
+
+        return redirect('/');
     }
 
 }
