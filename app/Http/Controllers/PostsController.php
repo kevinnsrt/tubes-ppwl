@@ -12,7 +12,7 @@ class PostsController extends Controller
      * Display a listing of the resource.
      */
 
-     
+
 
     public function index()
     {
@@ -37,7 +37,8 @@ class PostsController extends Controller
     $validatedData = $request->validate([
         'gambar' => 'required|image|mimes:jpeg,png,jpg,gif',
         'harga'=>'required|max:255',
-        'deskripsi'=>'required'
+        'deskripsi'=>'required',
+        'judul'=>'required|max:255'
     ]);
 
     // Cek apakah file gambar ada dalam request
@@ -89,7 +90,8 @@ public function update(Request $request, $id)
     $validatedData = $request->validate([
         'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         'harga' => 'required|max:255',
-        'deskripsi' => 'required'
+        'deskripsi' => 'required',
+        'judul'=>'required|max:255'
     ]);
 
     $postingan = Postingan::findOrFail($id);
@@ -108,7 +110,8 @@ public function update(Request $request, $id)
     $postingan->update([
         'harga' => $validatedData['harga'],
         'deskripsi' => $validatedData['deskripsi'],
-        'gambar'=> $validatedData['gambar']
+        'gambar'=> $validatedData['gambar'],
+        'judul'=> $validatedData['judul']
     ]);
 
     return redirect('/home')->with('success', 'Postingan berhasil diperbarui');

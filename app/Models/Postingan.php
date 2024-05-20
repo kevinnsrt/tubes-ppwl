@@ -10,8 +10,8 @@ class Postingan extends Model
     use HasFactory;
     protected $table = 'postingan';
     protected $fillable = [
-        'harga', 'deskripsi','gambar'
-    ]; 
+        'harga', 'deskripsi','gambar','judul'
+    ];
 
     protected $primaryKey = 'id';
 

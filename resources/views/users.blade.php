@@ -13,7 +13,7 @@
   <div class="flex justify-center">
       <div class="join">
           <div>
-              <form action="/search">
+              <form action="/searchusers">
                   <input type="text" name="search" placeholder="Search" class="input input-bordered input-info w-full max-w-xs" />
 
           </div>
@@ -27,7 +27,7 @@
       <div class="card card-compact w-96 bg-base-100 shadow-xl mr-3">
         <figure><img src="{{ asset('storage/' . $item->gambar)}}" alt="Shoes" /></figure>
         <div class="card-body">
-          <h2 class="card-title">TKO{{ $item->id }}</h2>
+          <h2 class="card-title">{{ $item->judul }}</h2>
           <p>{{ $item->harga }}</p>
             <div class="card-actions justify-end">
               <a href="{{ route('posts.detailpostingan', $item->id) }}">

@@ -33,6 +33,11 @@
             <form action="/create" method="POST" enctype="multipart/form-data">
             @csrf
 
+            <label class="input input-bordered flex items-center gap-2">
+                Judul
+                <input type="text" class="grow" name="judul" id="judul" />
+              </label>
+
               <label class="input input-bordered flex items-center gap-2">
                 Harga
                 <input type="text" class="grow" name="harga" id="harga" />

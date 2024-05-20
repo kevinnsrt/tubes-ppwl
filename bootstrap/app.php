@@ -11,7 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        \Illuminate\Auth\Middleware\Authenticate::class;
+        \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class;
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

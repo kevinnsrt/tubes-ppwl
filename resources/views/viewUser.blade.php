@@ -12,7 +12,7 @@
   <div class="card w-fit bg-base-100 shadow-xl">
     <figure><img src="{{ asset('storage/' . $postingan->gambar)}}" alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="card-title">TKO{{ $postingan->id }}</h2>
+      <h2 class="card-title">{{ $postingan->judul }}</h2>
       <p>{{ $postingan->harga }}</p>
       <p>{{ $postingan->deskripsi }}</p>
       <div class="card-actions justify-end">
