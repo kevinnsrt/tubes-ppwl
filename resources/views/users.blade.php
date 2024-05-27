@@ -8,6 +8,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+<div class="bg-[url('/background.jpg')]">
    @include('layout.navbarUsers')
 
   <div class="flex justify-center">
@@ -15,16 +16,15 @@
           <div>
               <form action="/searchusers">
                   <input type="text" name="search" placeholder="Search" class="input input-bordered input-info w-full max-w-xs" />
-
           </div>
           <button type="submit" class="btn btn-outline btn-primary ml-3">Search</button>
         </form>
       </div>
   </div>
 
-  <div class="flex justify-start mt-12">
+  <div class="grid grid-cols-3 mt-8 ml-20">
     @forelse ($akun as $item)
-      <div class="card card-compact w-96 bg-base-100 shadow-xl mr-3">
+      <div class="card card-compact w-96 bg-stone-900 shadow-xl mb-20">
         <figure><img src="{{ asset('storage/' . $item->gambar)}}" alt="Shoes" /></figure>
         <div class="card-body">
           <h2 class="card-title">{{ $item->judul }}</h2>
@@ -40,6 +40,7 @@
       <p class="text-center">Tidak ada postingan ditemukan.</p>
     @endforelse
   </div>
+</div>
 
 </body>
 </html>

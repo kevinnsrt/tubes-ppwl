@@ -8,6 +8,8 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+
+<div class="bg-[url('/background.jpg')]">
 {{-- @include('layout.navbar') --}}
 
     @if(session()->has('success'))
@@ -50,33 +52,37 @@
         </div>
     </div>
 
-    <div class="flex justify-start mt-12">
-      @forelse ($postingan as $item)
-        <div class="card card-compact w-96 bg-base-100 shadow-xl mr-3">
-          <figure><img src="{{ asset('storage/' . $item->gambar)}}" alt="Shoes" /></figure>
-          <div class="card-body">
-            <h2 class="card-title">{{ $item->judul }}</h2>
-            <p>{{ $item->harga }}</p>
-            <p>{{ $item->deskripsi }}</p>
-            <div class="card-actions justify-end">
-              <a href="{{ route('posts.detail', $item->id) }}">
-                <button class="btn btn-info">View</button>
-              </a>
-              <a href="{{ route('posts.edit', $item->id) }}">
-                <button class="btn btn-warning">Edit</button>
-              </a>
-              <form action="{{ route('posts.destroy', $item->id) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-error">Sold</button>
-              </form>
-            </div>
+
+        <div class="grid grid-cols-3 mt-8 ml-20">
+            @forelse ($postingan as $item)
+              <div class="card card-compact w-96 bg-base-100 shadow-xl mb-20">
+                <figure><img src="{{ asset('storage/' . $item->gambar)}}" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title">{{ $item->judul }}</h2>
+                  <p>{{ $item->harga }}</p>
+                  <p>{{ $item->deskripsi }}</p>
+                  <div class="card-actions justify-end">
+                    <a href="{{ route('posts.detail', $item->id) }}">
+                      <button class="btn btn-info">View</button>
+                    </a>
+                    <a href="{{ route('posts.edit', $item->id) }}">
+                      <button class="btn btn-warning">Edit</button>
+                    </a>
+                    <form action="{{ route('posts.destroy', $item->id) }}" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <button class="btn btn-error">Sold</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            @empty
+            <div class="flex justify-center">
+              <p class="text-center">Tidak ada postingan ditemukan.</p>
+            @endforelse
           </div>
-        </div>
-      @empty
-      <div>
-        <p class="text-center">Tidak ada postingan ditemukan.</p>
-      @endforelse
-    </div>
+
+</div>
+
 </body>
 </html>

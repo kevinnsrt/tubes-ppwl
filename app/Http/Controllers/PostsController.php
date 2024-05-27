@@ -37,7 +37,7 @@ class PostsController extends Controller
     $validatedData = $request->validate([
         'gambar' => 'required|image|mimes:jpeg,png,jpg,gif',
         'harga'=>'required|max:255',
-        'deskripsi'=>'required',
+        'deskripsi'=>'required|max:255',
         'judul'=>'required|max:255'
     ]);
 

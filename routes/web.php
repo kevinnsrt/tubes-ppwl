@@ -5,8 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostsController;
-use Illuminate\Auth\Middleware\Authenticate;
-
+use  Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,5 +27,3 @@ Route::delete('/delete/{id}', [PostsController::class, 'destroy']);
 Route::get('/detail/{id}', [PostsController::class, 'detail'])->name('posts.detail');
 Route::get('/detailpostingan/{id}', [PostsController::class, 'detailpostingan'])->name('posts.detailpostingan');
 Route::resource('/create',PostsController::class);
-
-
