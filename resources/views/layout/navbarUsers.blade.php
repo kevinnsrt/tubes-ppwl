@@ -6,15 +6,8 @@
       </div>
 
     </div>
-    <a href="/" class="btn btn-ghost text-xl">666 Consignment</a>
+    <a href="/666consignment" class="btn btn-ghost text-xl">666 Consignment</a>
   </div>
 
-
-  <div class="navbar-end">
-    <a href="/login">
-      <button class="btn btn-outline">Admin</button>
-    </a>
-
-  </div>
 
 </div>

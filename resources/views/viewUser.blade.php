@@ -16,7 +16,7 @@
       <p>{{ $postingan->harga }}</p>
       <p>{{ $postingan->deskripsi }}</p>
       <div class="card-actions justify-end">
-        <a href="/users">
+        <a href="/666consignment">
         <button class="btn btn-primary">Back</button>
         </a>
         <a href="https://wa.me/6281264872825?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20anda">

@@ -8,9 +8,10 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+<x-app-layout>
+
 
 <div class="bg-[url('/background.jpg')]">
-{{-- @include('layout.navbar') --}}
 
     @if(session()->has('success'))
         <div role="alert" class="alert alert-success">
@@ -21,14 +22,8 @@
         </div>
     @endif
 
-    <div class="flex justify-end mr-4 mb-4">
-      <form method="post" action="/logout">
-        @csrf
-        <button class="btn btn-warning mt-4">Logout</button>
-      </form>
-    </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-8">
         <div class="join">
           <div>
             <div>
@@ -43,11 +38,7 @@
           </form>
           </div>
           <div>
-            <div class="ml-4">
-              <a href="/add">
-                <button class="btn btn-outline btn-accent">+</button>
-              </a>
-            </div>
+           
           </div>
         </div>
     </div>
@@ -83,6 +74,6 @@
           </div>
 
 </div>
-
+</x-app-layout>
 </body>
 </html>

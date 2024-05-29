@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add New</title>
+    <title>New Post</title>
     @vite('resources/css/app.css')
 </head>
 <body>
-    {{-- @include('layout.navbar') --}}
+    <x-app-layout>
 
-    <div  class="flex ml-4 mb-4">
-      <a href="/home"><button class="btn btn-warning mt-4">Back</button>
-      </a>
-      </div>
 
     @if(session()->has('success'))
 
@@ -27,7 +23,7 @@
     @endif
 
 
-    <div class="mt-32">
+    <div class="mt-44 ">
 
         <div class="flex justify-center">
             <form action="/create" method="POST" enctype="multipart/form-data">
@@ -38,15 +34,12 @@
                 <input type="text" class="grow" name="judul" id="judul" />
               </label>
 
-              <label class="input input-bordered flex items-center gap-2">
+              <label class="input input-bordered flex items-center mt-4 gap-2">
                 Harga
                 <input type="text" class="grow" name="harga" id="harga" />
               </label>
-
-              <input type="file" name="gambar" id="gambar" class="file-input file-input-bordered w-full max-w-xs" />
-
-              <textarea class="textarea textarea-bordered" placeholder="Deskripsi" name="deskripsi" id="deskripsi"></textarea>
-
+              <textarea class="textarea textarea-bordered w-full mt-4" placeholder="Deskripsi" name="deskripsi" id="deskripsi"></textarea>
+              <input type="file" name="gambar" id="gambar" class="file-input file-input-bordered w-full mt-4" />
               <div class="flex justify-center mt-4">
                 <button class="btn btn-info">Create</button>
               </div>
@@ -55,6 +48,6 @@
 
         </div>
     </div>
-
+    </x-app-layout>
 </body>
 </html>
