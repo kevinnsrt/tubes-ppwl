@@ -11,36 +11,38 @@
 <div class="bg-[url('/background.jpg')]">
    @include('layout.navbarUsers')
 
-  <div class="flex justify-center">
-      <div class="join">
-          <div>
-              <form action="/searchusers">
-                  <input type="text" name="search" placeholder="Search" class="input input-bordered input-info w-full max-w-xs" />
-          </div>
-          <button type="submit" class="btn btn-outline btn-primary ml-3">Search</button>
-        </form>
+   <div class="flex justify-center">
+   <div class="carousel w-4/5 max-h-full ">
+    <div id="slide1" class="carousel-item relative w-full">
+      <img src="https://images.alphacoders.com/135/thumb-1920-1356698.jpeg" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="#slide4" class="btn btn-circle">❮</a>
+        <a href="#slide2" class="btn btn-circle">❯</a>
       </div>
-  </div>
-
-  <div class="grid grid-cols-3 mt-8 ml-20">
-    @forelse ($akun as $item)
-      <div class="card card-compact w-96 bg-stone-900 shadow-xl mb-20">
-        <figure><img src="{{ asset('storage/' . $item->gambar)}}" alt="Shoes" /></figure>
-        <div class="card-body">
-          <h2 class="card-title">{{ $item->judul }}</h2>
-          <p>{{ $item->harga }}</p>
-            <div class="card-actions justify-end">
-              <a href="{{ route('posts.detailpostingan', $item->id) }}">
-                <button class="btn btn-info">View</button>
-              </a>
-            </div>
-        </div>
+    </div>
+    <div id="slide2" class="carousel-item relative w-full">
+      <img src="https://images.alphacoders.com/124/thumb-1920-1249094.jpg" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="#slide1" class="btn btn-circle">❮</a>
+        <a href="#slide3" class="btn btn-circle">❯</a>
       </div>
-    @empty
-      <p class="text-center">Tidak ada postingan ditemukan.</p>
-    @endforelse
+    </div>
+    <div id="slide3" class="carousel-item relative w-full">
+      <img src="https://images5.alphacoders.com/120/thumb-1920-1203269.jpg" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="#slide2" class="btn btn-circle">❮</a>
+        <a href="#slide4" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+    <div id="slide4" class="carousel-item relative w-full">
+      <img src="https://images7.alphacoders.com/132/thumb-1920-1321613.jpeg" class="w-full" />
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="#slide3" class="btn btn-circle">❮</a>
+        <a href="#slide1" class="btn btn-circle">❯</a>
+      </div>
+    </div>
   </div>
-</div>
+   </div>
 
 </body>
 </html>

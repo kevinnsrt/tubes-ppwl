@@ -16,12 +16,11 @@
       <p>{{ $postingan->harga }}</p>
       <p>{{ $postingan->deskripsi }}</p>
       <div class="card-actions justify-end">
-        <a href="/666consignment">
-        <button class="btn btn-primary">Back</button>
+        <a href="/account">
+        <button class="btn btn-info">Back</button>
         </a>
-        <a href="https://wa.me/6281264872825?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20anda">
-          <button class="btn btn-primary">Buy</button>
-          </a>
+          <a href="/pesanan/{{ $postingan->id_postingan }}" class="btn btn-info">Buy</a>
+
 
       </div>
     </div>

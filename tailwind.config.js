@@ -17,5 +17,17 @@ export default {
         },
     },
 
+    daisyui: {
+        themes: [
+          {
+            mytheme: {
+
+
+   "base-100": "#020617",
+
+            },
+          },
+        ],
+      },
     plugins: [require('daisyui'),forms],
 };

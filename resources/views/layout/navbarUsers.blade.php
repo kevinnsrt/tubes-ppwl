@@ -1,4 +1,4 @@
-<div class="navbar bg-black-100">
+<div class="navbar bg-indigo-950 mb-12">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -6,7 +6,8 @@
       </div>
 
     </div>
-    <a href="/666consignment" class="btn btn-ghost text-xl">666 Consignment</a>
+    <a href="/666consignment" class="btn btn-ghost text-yellow-600 text-xl">666 Consignment</a>
+    <a href="/account" class="btn btn-ghost text-yellow-600 text-xl">Account</a>
   </div>
 
 

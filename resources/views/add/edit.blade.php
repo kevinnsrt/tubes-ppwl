@@ -20,7 +20,7 @@
 
     <div class="mt-40">
         <div class="flex justify-center">
-            <form action="{{ route('posts.update', $postingan->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('posts.update', $postingan->id_postingan) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
 

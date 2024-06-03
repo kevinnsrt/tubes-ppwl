@@ -68,15 +68,15 @@ class PostsController extends Controller
     public function show()
     {
         $akun = Postingan::paginate(5);
-        return view('users', compact('akun'));
+        return view('account', compact('akun'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit($id_postingan)
     {
-        $postingan = Postingan::findOrFail($id);
+        $postingan = Postingan::findOrFail($id_postingan);
         return view('add.edit', compact('postingan'));
     }
 
@@ -85,7 +85,7 @@ class PostsController extends Controller
      */
 
 
-public function update(Request $request, $id)
+public function update(Request $request, $id_postingan)
 {
     $validatedData = $request->validate([
         'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
@@ -94,7 +94,7 @@ public function update(Request $request, $id)
         'judul'=>'required|max:255'
     ]);
 
-    $postingan = Postingan::findOrFail($id);
+    $postingan = Postingan::findOrFail($id_postingan);
 
     if ($request->hasFile('gambar')) {
         if ($postingan->gambar) {
@@ -122,22 +122,22 @@ public function update(Request $request, $id)
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($id_postingan)
     {
-        $postingan = Postingan::findOrFail($id);
+        $postingan = Postingan::findOrFail($id_postingan);
         $postingan->delete();
         return redirect('/home')->with('success', 'Postingan berhasil dihapus');
     }
 
-    public function detail($id)
+    public function detail($id_postingan)
 {
-    $postingan = Postingan::findOrFail($id); // Pastikan model postingan Anda adalah 'Postingan'
+    $postingan = Postingan::findOrFail($id_postingan); // Pastikan model postingan Anda adalah 'Postingan'
     return view('viewAdmin', compact('postingan'));
 }
 
-public function detailpostingan($id)
+public function detailpostingan($id_postingan)
 {
-    $postingan = Postingan::findOrFail($id); // Pastikan model postingan Anda adalah 'Postingan'
+    $postingan = Postingan::findOrFail($id_postingan); // Pastikan model postingan Anda adalah 'Postingan'
     return view('viewUser', compact('postingan'));
 }
 
