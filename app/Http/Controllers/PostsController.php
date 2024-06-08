@@ -16,7 +16,7 @@ class PostsController extends Controller
 
     public function index()
     {
-        $postingan = Postingan::paginate(5);
+        $postingan = Postingan::all();
         return view('home', compact('postingan'));
     }
 
@@ -67,7 +67,7 @@ class PostsController extends Controller
      */
     public function show()
     {
-        $akun = Postingan::paginate(5);
+        $akun = Postingan::all();
         return view('account', compact('akun'));
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dashboard;
 use App\Models\Postingan;
 use App\Models\Pesanan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,8 +19,24 @@ class DashboardController extends Controller
         $totalPesanan = DB::table('pesanan')->count();
         $totalHarga = Postingan::sum('harga');
         $totalAkun = DB::table('postingan')->count();
+        $dataPesanan = DB::table('pesanan')
+    ->selectRaw("DATE(created_at) as date, COUNT(id_pesanan) as total_pesanan")
+    ->whereYear('created_at', now()->year)
+    ->groupBy("date")
+    ->get();
 
-        return view('dashboard',['totalAkun'=>$totalAkun,'totalHarga'=>$totalHarga,'totalPesanan'=>$totalPesanan,]);
+    $chartDataPesanan = [];
+    foreach ($dataPesanan as $data) {
+    $date = Carbon::parse($data->date);
+    $chartDataPesanan[] = [
+    'x' => $date->format('d M'),
+    'y' => $data->total_pesanan,
+    ];
+    }
+
+        return view('dashboard',['totalAkun'=>$totalAkun,'totalHarga'=>$totalHarga,'totalPesanan'=>$totalPesanan,
+        'chartDataPesanan'=>$chartDataPesanan,
+        ]);
     }
 
     /**

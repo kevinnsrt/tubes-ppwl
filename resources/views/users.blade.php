@@ -8,41 +8,19 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-<div class="bg-[url('/background.jpg')]">
-   @include('layout.navbarUsers')
-
-   <div class="flex justify-center">
-   <div class="carousel w-4/5 max-h-full ">
-    <div id="slide1" class="carousel-item relative w-full">
-      <img src="https://images.alphacoders.com/135/thumb-1920-1356698.jpeg" class="w-full" />
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide4" class="btn btn-circle">❮</a>
-        <a href="#slide2" class="btn btn-circle">❯</a>
-      </div>
-    </div>
-    <div id="slide2" class="carousel-item relative w-full">
-      <img src="https://images.alphacoders.com/124/thumb-1920-1249094.jpg" class="w-full" />
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide1" class="btn btn-circle">❮</a>
-        <a href="#slide3" class="btn btn-circle">❯</a>
-      </div>
-    </div>
-    <div id="slide3" class="carousel-item relative w-full">
-      <img src="https://images5.alphacoders.com/120/thumb-1920-1203269.jpg" class="w-full" />
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide2" class="btn btn-circle">❮</a>
-        <a href="#slide4" class="btn btn-circle">❯</a>
-      </div>
-    </div>
-    <div id="slide4" class="carousel-item relative w-full">
-      <img src="https://images7.alphacoders.com/132/thumb-1920-1321613.jpeg" class="w-full" />
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide3" class="btn btn-circle">❮</a>
-        <a href="#slide1" class="btn btn-circle">❯</a>
+   <div class="hero min-h-screen" style="background-image: url(https://images6.alphacoders.com/128/thumb-1920-1282624.jpg);">
+    <div class="hero-overlay bg-opacity-20"></div>
+    <div class="hero-content text-center text-neutral-content">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold text-stone-50">Welcome To 666 Consignment</h1>
+        <p class="mb-5 text-stone-50">Selamat datang di 666 Consignment, solusi tepercaya untuk semua kebutuhan consignment akun Valorant Anda. Kami menyediakan platform yang aman dan andal untuk menitipkan serta membeli akun Valorant dengan mudah. Bergabunglah dengan komunitas kami dan temukan akun impian Anda hari ini!</p>
+        <a href="/account" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </div>
-   </div>
+
+
+
 
 </body>
 </html>
