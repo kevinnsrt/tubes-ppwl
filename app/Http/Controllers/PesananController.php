@@ -38,7 +38,7 @@ class PesananController extends Controller
     ]);
 
     Pesanan::create($validatedData);
-    return redirect('/666consignment')->with('success', 'Postingan berhasil dibuat');
+    return redirect('/account')->with('success', 'Postingan berhasil dibuat');
 }
 
     /**

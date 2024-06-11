@@ -34,6 +34,7 @@ class DashboardController extends Controller
     ];
     }
 
+
         return view('dashboard',['totalAkun'=>$totalAkun,'totalHarga'=>$totalHarga,'totalPesanan'=>$totalPesanan,
         'chartDataPesanan'=>$chartDataPesanan,
         ]);
